@@ -1,7 +1,15 @@
 package main
 
-import "fmt"
-
-func main() {
-    fmt.Printf("Update world\n")
+import {
+    "fmt"
+    "log"
+    "os/exec"
 }
+
+func main() (
+    out, err := exec.Command("docker service ls").Output()
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Printf("%s\n", out)
+)
