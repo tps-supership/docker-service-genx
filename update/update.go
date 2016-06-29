@@ -7,7 +7,7 @@ import (
 )
 
 func main() (
-    out, err := exec.Command("docker service ls").Output()
+    out, err := exec.Command("docker").Output()
     if err != nil {
         log.Fatal(err)
     }
