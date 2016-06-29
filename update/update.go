@@ -6,10 +6,10 @@ import (
     "os/exec"
 )
 
-func main() (
+func main() {
     out, err := exec.Command("docker").Output()
     if err != nil {
         log.Fatal(err)
     }
-    fmt.Printf("%s\n", out)
-)
+    fmt.Printf("The date is %s\n", out)
+}
