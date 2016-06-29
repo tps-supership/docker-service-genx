@@ -1,10 +1,10 @@
 package main
 
-import {
+import (
     "fmt"
     "log"
     "os/exec"
-}
+)
 
 func main() (
     out, err := exec.Command("docker service ls").Output()
