@@ -8,7 +8,7 @@ from string import Template
 
 path = 'docker'
 
-host_ip = os.getenv('HOST_IP','172.31.29.220')
+host_ip = os.getenv('HOST_IP','arcariuscreate.net')
 
 
 template = Template('''server {
