@@ -5,9 +5,6 @@ import os
 from string import Template
 
 
-
-path = 'docker'
-
 host_ip = os.getenv('HOST_IP','arcariuscreate.net')
 
 
@@ -38,8 +35,7 @@ file_path = '/etc/nginx/sites-enabled'
 
 
 def _run(cmd, raise_error=True):
-    cmd = [path] + cmd
-
+    cmd = ['docker'] + cmd
     p = Popen(cmd, stdin=PIPE, stdout=PIPE, stderr=PIPE)
     stdout, stderr = p.communicate()
     error_code = p.returncode
@@ -76,6 +72,9 @@ def build_template(port_description):
 
 def create_config(services):
     config = ""
+    if services[0] == u'':
+        return config
+
     for service_id in services:
         ports = get_port_description(service_id)
         if ports:

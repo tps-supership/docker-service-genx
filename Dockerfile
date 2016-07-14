@@ -1,9 +1,6 @@
-FROM python:2.7-alpine
+FROM python:2.7
 
 MAINTAINER tPS <thomas.yoshihara@supership.jp>
-
-RUN apk update && \
-    apk add bash
 
 ADD sites-enabled/ /etc/nginx/sites-enabled/
 
